@@ -1,6 +1,6 @@
 from simplemma import text_lemmatizer
 from haystack.schema import Document
-from typing import Optional, List, Dict, Union, Any
+from typing import Optional, List, Dict, Tuple
 from haystack.nodes.base import BaseComponent
 from typing import Optional
 
@@ -15,19 +15,11 @@ class LemmatizeDocuments(BaseComponent):
 
     outgoing_edges = 1
 
-    def run(self, documents: List[Document]) -> List[Document]:
-
+    def run(self, documents: List[Document]) -> Tuple[Dict, str]:
         ldocuments = []
-        for doc in documents:
-            
+        for doc in documents:            
             doc_words = text_lemmatizer(doc.content, lang=self.base_lang)
-            lemmatized_doc = ' '.join(doc_words)
-
-            # wnl = WordNetLemmatizer()
-            # doc_words = nltk.word_tokenize(doc.content)
-            # lemmatized_doc = ' '.join([wnl.lemmatize(words) for words in doc_words])
-            
-            doc.content = lemmatized_doc
+            doc.content = ' '.join(doc_words)
             ldocuments.append(doc)
 
         return {"documents": ldocuments}, "output_1"
