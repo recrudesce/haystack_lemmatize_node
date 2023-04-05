@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "haystack_lemmatize_node"
+version = "0.0.1"
+authors = [
+  { name="recrudesce", email="recrudesce@gmail.com" },
+]
+description = "An Lemmatizing node for Deepset Haystack"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "farm-haystack",
+  "simplemma",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/recrudesce/haystack_lemmatize_node"
+"Bug Tracker" = "https://github.com/recrudesce/haystack_lemmatize_node/issues"
