@@ -1,5 +1,6 @@
 # haystack_lemmatize_node
 
+```python
 import logging
 import re
 
@@ -45,3 +46,4 @@ query = "What does the Rhodes Statue look like?"
 output = pipe.run(query)
 
 print(output['answers'][0].answer)
+```
