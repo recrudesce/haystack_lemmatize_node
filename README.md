@@ -6,7 +6,7 @@ import re
 
 from datasets import load_dataset
 from haystack.document_stores import InMemoryDocumentStore
-from haystack.nodes import EmbeddingRetriever, PromptNode, PromptTemplate, AnswerParser, BM25Retriever
+from haystack.nodes import PromptNode, PromptTemplate, AnswerParser, BM25Retriever
 from haystack.pipelines import Pipeline
 from haystack_lemmatize_node import LemmatizeDocuments
 
@@ -34,7 +34,7 @@ prompt_node = PromptNode(
     api_key="sk-OPENAIKEY",
 )
 
-lemmatize = LemmatizeDocuments()
+lemmatize = LemmatizeDocuments() # you can pass the `base_lang=XX` argument here too, where XX is a language as listed here: https://pypi.org/project/simplemma/
 
 pipe = Pipeline()
 pipe.add_node(component=retriever, name="Retriever", inputs=["Query"])
