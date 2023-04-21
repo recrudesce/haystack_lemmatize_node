@@ -15,7 +15,7 @@ The process of lemmatizing the document content can potentially reduce the amoun
 
 ## Installation
 
-Clone the repo to a directory, change to that directory, then perform a `pip install '.'`.  This will install the package to your Python libraries.
+`pip install haystack-lemmatize-node`
 
 ## Usage
 
