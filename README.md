@@ -1,4 +1,25 @@
-# haystack_lemmatize_node
+## Lemmatization
+
+Lemmatization is a text pre-processing technique used in natural language processing (NLP) models to break a word down to its root meaning to identify similarities. For example, a lemmatization algorithm would reduce the word better to its root word, or lemme, good.
+
+This node can be placed within a pipeline to lemmatize documents returned by a Retriever, prior to adding them as context to a prompt (for a PromptNode or similar).
+The process of lemmatizing the document content can potentially reduce the amount of tokens used by up to 30%, without drastically affecting the meaning of the document.
+
+![image](https://user-images.githubusercontent.com/6450799/230403871-d0299748-977c-4c9e-9d70-914d8ff2bf3b.png)
+
+### Before Lemmatization:
+![image](https://user-images.githubusercontent.com/6450799/230404198-a3ed6382-03b8-4ec6-b88d-4232560752f8.png)
+
+### After Lemmatization:
+![image](https://user-images.githubusercontent.com/6450799/230404246-a8488a57-73bd-4420-9f1b-8a080b84121b.png)
+
+## Installation
+
+Clone the repo to a directory, change to that directory, then perform a `pip install '.'`.  This will install the package to your Python libraries.
+
+## Usage
+
+Include it in your pipeline - example as follows:
 
 ```python
 import logging
@@ -47,3 +68,6 @@ output = pipe.run(query)
 
 print(output['answers'][0].answer)
 ```
+
+## Caveats
+Sometimes lemmatization can be slow for large document content, but in the world of AI where we can potentially wait 30+ seconds for an LLM to respond (hello GPT-4), what's a couple more seconds?
