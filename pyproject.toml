@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "haystack_lemmatize_node"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="recrudesce", email="recrudesce@gmail.com" },
 ]
